@@ -20,7 +20,7 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "morgan": "^1.9.1",
@@ -39,7 +39,7 @@
     "graphql-iso-date": "^3.6.1",
     "graphql-resolvers": "^0.3.2",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.3.14",
+    "mongoose": "^5.9.7",
     "uuid": "^3.3.2",
     "validator": "^10.9.0"
   }
