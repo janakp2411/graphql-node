@@ -62,7 +62,7 @@ export default {
         throw new AuthenticationError('Invalid password.');
       }
 
-      return { token: createToken(user, secret, '30m') };
+      return { user, token: createToken(user, secret, '30m') };
     },
 
     updateUser: combineResolvers(
