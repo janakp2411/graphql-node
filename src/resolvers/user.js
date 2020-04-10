@@ -40,7 +40,7 @@ export default {
         password,
       });
 
-      return { token: createToken(user, secret, '30m') };
+      return { user, token: createToken(user, secret, '30m') };
     },
 
     signIn: async (
@@ -91,11 +91,11 @@ export default {
     ),
   },
 
-  User: {
-    messages: async (user, args, { models }) => {
-      return await models.Message.find({
-        userId: user.id,
-      });
-    },
-  },
+  // User: {
+  //   messages: async (user, args, { models }) => {
+  //     return await models.Message.find({
+  //       userId: user.id,
+  //     });
+  //   },
+  // },
 };

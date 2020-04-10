@@ -21,6 +21,7 @@ export default gql`
 
   type Token {
     token: String!
+    user: User
   }
 
   type User {
@@ -28,6 +29,5 @@ export default gql`
     username: String!
     email: String!
     role: String
-    messages: [Message!]
   }
 `;
