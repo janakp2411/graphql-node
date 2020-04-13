@@ -84,14 +84,6 @@ const server = new ApolloServer({
 
 server.applyMiddleware({ app, path: '/graphql' });
 
-// server.use(
-//   '/graphiql',
-//   graphiqlExpress({
-//     app,
-//     endpointURL: '/graphql',
-//   }),
-// );
-
 const httpServer = http.createServer(app);
 server.installSubscriptionHandlers(httpServer);
 
@@ -101,7 +93,6 @@ const port = process.env.PORT || 8000;
 
 connectDb().then(async () => {
   if (isTest || isProduction) {
-    // reset database
     await Promise.all([
       models.User.deleteMany({}),
       models.Message.deleteMany({}),
