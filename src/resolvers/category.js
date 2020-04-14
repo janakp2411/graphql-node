@@ -1,6 +1,6 @@
 export default {
   Query: {
-    category: async (parent, args, { models }) => {
+    getAllCategory: async (parent, args, { models }) => {
       return await models.Category.find();
     }
   },
@@ -10,6 +10,18 @@ export default {
        name
       });
       return await models.Category.find();
-    }
+    },
+    updateCategory: async (parent, arg, { models }) => {
+      return await models.Category.findByIdAndUpdate(arg.id, {...arg}, { new: true });
+    },
+    deleteCategory: async (parent, { id }, { models }) => {
+      const category = await models.Category.findById(id);
+      if (category) {
+        await category.remove();
+        return true;
+      } else {
+        return false;
+      }
+    },
   }
 };
