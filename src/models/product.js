@@ -20,10 +20,9 @@ export const productSchema = new mongoose.Schema({
         type: String, 
         required: [true, "You must supply a category to a product"] 
     },
-    images: [{
-            type: String
-        }
-    ]
+    imgUrl: {
+        type: String
+    }
 });
 
 const Product = mongoose.model("products", productSchema)
