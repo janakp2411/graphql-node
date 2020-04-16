@@ -6,9 +6,7 @@ export default {
   },
   Mutation: {
     addCategory: async (parent, {name}, { models }) => {
-      const category = await models.Category.create({
-       name
-      });
+      await models.Category.create({name});
       return await models.Category.find();
     },
     updateCategory: async (parent, arg, { models }) => {

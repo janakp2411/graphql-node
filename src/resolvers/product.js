@@ -3,7 +3,7 @@ export default {
     getAllProducts: async (parent, arg, { models }) => {
       return await models.Product.find();
     },
-    getproductsBycategory: async (parent, {category}, { models }) => {
+    getProductsBycategory: async (parent, {category}, { models }) => {
       return await models.Product.find({category});
     },
     getProductById: async (parent, {id}, { models }) => {

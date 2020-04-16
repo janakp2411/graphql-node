@@ -10,19 +10,17 @@ export default gql`
     }
 
     type Product {
-        id: ID!
-        name: String!
-        price: String!
-        description: String!
-        category: String!
+        name: String
+        id: ID
+        price: String
+        category: String
+        imgUrl: String
     }
 
     extend type Query {
         getProductById(id: ID!): Product!
         getAllProducts: [Product!]
-        getproductsBycategory(
-            category: String!
-        ): [Product!]
+        getProductsBycategory(category: String!): [Product]
     }
 
     extend type Mutation {
@@ -41,6 +39,4 @@ export default gql`
         ): Product!
         deleteProduct(id: ID!): Boolean!
     }
-
-    
 `;
